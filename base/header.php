@@ -11,10 +11,10 @@
     <title>Jual Beli Online di TOKOREADYA</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="static/css/shop-homepage.css" rel="stylesheet">
+    <link href="/static/css/shop-homepage.css" rel="stylesheet">
 
   </head>
 

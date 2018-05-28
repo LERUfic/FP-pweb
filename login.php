@@ -11,7 +11,7 @@
             <div class="logo"><h1>login</h1></div>
             <!-- Main Form -->
             <div class="login-form-1">
-              <form id="login-form" class="text-left" novalidate="novalidate" method="POST" action="/model/loginauth.php">
+              <form id="login-form" class="text-left" novalidate="novalidate" method="POST" action="model/loginauth.php">
                 <div class="login-form-main-message"></div>
                 <div class="main-login-form">
                   <div class="login-group">

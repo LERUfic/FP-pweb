@@ -1,10 +1,11 @@
 <?php 
 	$servername = "127.0.0.1";
-	$username = "aguelsatria";
-	$password = "aswijaya";
+	$username = "root";
+	$password = "";
+	$database = "pwebfpkita";
 
 	// Create connection
-	$conn = new mysqli($servername, $username, $password);
+	$conn = new mysqli($servername, $username, $password, $database);
 
 	// Check connection
 	if ($conn->connect_error) {

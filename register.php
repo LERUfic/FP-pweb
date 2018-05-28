@@ -11,7 +11,7 @@
             <div class="logo"><h1>Register</h1></div>
             <!-- Main Form -->
             <div class="login-form-1">
-              <form id="login-form" class="text-left" novalidate="novalidate" enctype="multipart/form-data" action="model/new_user.php" method="POST">
+              <form id="login-form" class="text-left" enctype="multipart/form-data" action="/model/new_user.php" method="POST">
                 <div class="login-form-main-message"></div>
                 <div class="main-login-form">
                   <div class="login-group">

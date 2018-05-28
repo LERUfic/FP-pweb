@@ -1,6 +1,4 @@
 <?php 
-  $data = array();
-
   include 'model/getAllLapak.php';
 ?>
 <!DOCTYPE html>
@@ -62,17 +60,17 @@
 
         <div class="row">
           
-          <?php if(!empty($_SESSION['lapakdata'])){
-              foreach($_SESSION['lapakdata'] as $r){?>
+        <?php if(!empty($_SESSION['lapakdata'])){
+          foreach($_SESSION['lapakdata'] as $r){?>
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
                 <a href="#"><img class="card-img-top" width="700" height="400" src="<?php echo $r['imgPath'] ?>" alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
-                    <a href="/toko/"<?php echo r['id_toko'] ?> <?php echo $r['namatoko'] ?></a>
+                    <a href="/toko.php?idtoko="<?php echo r['userid'] ?> <?php echo $r['username'] ?></a>
                   </h4>
-                  <h5>Pemilik: <?php echo r['pemilik'] ?></h5>
-                  <p class="card-text"><?php echo r['deskripsi'] ?></p>
+                  <h5>Pemilik: <?php echo r['username'] ?></h5>
+                  <p class="card-text"><?php echo r['description'] ?></p>
                 </div>
                 <div class="card-footer">  
                 </div>

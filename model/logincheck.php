@@ -1,15 +1,15 @@
 <?php 
 	session_start();
 	if(empty($_SESSION['logindata'])){
-		header('Location: lapak.php');
+		header('Location: /login.php');
 	}
 
-	if($_SESSION['logindata']['role']=='penjual'){
-   		header("Location:user.php");	
+	if($_SESSION['logindata']['tipe']=='penjual'){
+   		header("Location: /penjual.php");	
    	}
 
-   	if($_SESSION['logindata']['role'] =='pembeli'){
-   		header("Location:penjual.php");
+   	if($_SESSION['logindata']['tipe'] =='pembeli'){
+   		header("Location: /lapak.php");
    	}
 
 ?>

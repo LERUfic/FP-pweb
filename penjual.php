@@ -4,31 +4,10 @@
   $data["imgtoko"] = "img/full.png";
   $data["alamat"] = "Jalan TC 2018";
   $data["kontak"] = "085702400989";
-  include "auth/logincheck.php"
+  //include "auth/logincheck.php"
 ?>
-<!DOCTYPE html>
-<html lang="en">
 
-  <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Jual Beli Online di TOKOREADYA</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="static/css/shop-homepage.css" rel="stylesheet">
-
-  </head>
-
-  <body>
-
-  <?php include 'base/navbar.php' ?>
+  <?php include 'base/header.php' ?>
 
     <!-- Page Content -->
     <div class="container">

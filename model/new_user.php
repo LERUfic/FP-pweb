@@ -1,7 +1,7 @@
 <?php 
 	
 	session_start();
-	include 'koneksi.db';
+	include 'koneksi.php';
 
 	//Data User
 	$username = $_POST['lg_username'];
@@ -11,19 +11,25 @@
 	$alamat = $_POST['lg_alamat'];
 	$kontak = $_POST['lg_kontak'];
 
-
 	//Olah File
 	$tempFile = $_FILES['lg_file']['tmp_name'];
-	$desFile = "static/img/userlapak/";
-	$destination = $desFile.$username;
+	$desFile = "../static/img/userlapak/";
+	$destination = $desFile.$username.'-'.$_FILES['lg_file']['name'];
+
 
 	$result = move_uploaded_file($tempFile, $destination);
 
+	echo json_encode($_FILES);
+	echo json_encode($destination);
+	
+   	//Proses input db
+  	$stmt = $conn->prepare('INSERT INTO users (username,password,description,tipe,alamat,kontak,imgPath) VALUES(?,?,?,?,?,?,?)');
 
- 	$sql = "insert into users set(username,password,description,tipe,alamat,kontak,imgPath) values(".$username.",".$password.",".$description.",".$tipe.",".$alamat.",".$kontak.",".$destination.")";
-   
-  	$result = $conn->query($sql);
+	$stmt->bind_param("sssssss",$username, $password, $description, $tipe, $alamat, $kontak, $destination);
+	$stmt->execute();
 
-	header("Location:login.php");
+	$path = $_SERVER['SERVER_NAME'];
+
+	header("Location: /login.php");
 
  ?>

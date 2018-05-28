@@ -1,29 +1,37 @@
 <?php 
 	
 	session_start();
-	include 'koneksi.db';
+	include 'koneksi.php';
 
+	//Get LOGIN
 	$username = $_POST['lg_username'];
 	$password = $_POST['lg_password'];
 
- 	$sql = "select * from users where username = ".$username." and password = ".$password.";
-   
-   	$result = $conn->query($sql);
+	// echo json_encode($username);
+	// echo json_encode($password);
 
-	$row = $result->fetch_array(MYSQLI_ASSOC);
+	$stmt = $conn->prepare('SELECT * FROM users WHERE username = ? and password = ?');
+
+	$stmt->bind_param('ss',$username, $password);
+	$stmt->execute();
+	$result = $stmt->get_result();
+	$row = $result->fetch_assoc();
 
 	$_SESSION['logindata'] = $row;
+	//echo json_encode($_SESSION['logindata']['tipe']);
 	
-	if($row['logindata']['role']=='penjual'){
-		header("Location:user.php");	
+	//Redirect based on logindata
+	if($_SESSION['logindata']['tipe']=='penjual'){
+		header("Location: /penjual.php");
+		exit();
 	}
 
-	if($row['logindata']['role']=='pembeli'){
-		header("Location:penjual.php");
+	if($_SESSION['logindata']['tipe']=='pembeli'){
+		header("Location: /lapak.php");
+		exit();
 	}
-   
-	if(empty($_SESSION['logindata'])){
-      header("Location:login.php");
-  	}
+	
+	$_SESSION['logindata'] = NULL;
+	header("Location: /login.php");
 
 ?>
