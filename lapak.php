@@ -1,29 +1,11 @@
 <?php 
   include 'model/getAllLapak.php';
+  session_start();
+  if(empty($_SESSION['logindata'])){
+    header('Location: /login.php');
+  }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-
-  <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Jual Beli Online di TOKOREADYA</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="static/css/shop-homepage.css" rel="stylesheet">
-
-  </head>
-
-  <body>
-
-  <?php include 'base/navbar.php' ?>
+  <?php include 'base/header.php' ?>
 
     <!-- Page Content -->
     <div class="container">
@@ -58,19 +40,18 @@
           </div>
         </center>
 
-        <div class="row">
-          
-        <?php if(!empty($_SESSION['lapakdata'])){
-          foreach($_SESSION['lapakdata'] as $r){?>
+        <div class="row">       
+        <?php if(!empty($data)){
+          foreach($data as $row){?>
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
-                <a href="#"><img class="card-img-top" width="700" height="400" src="<?php echo $r['imgPath'] ?>" alt=""></a>
+                <a href="#"><img class="card-img-top" width="700" height="400" src="<?php echo $row['imgPath'] ?>" alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
-                    <a href="/toko.php?idtoko="<?php echo r['userid'] ?> <?php echo $r['username'] ?></a>
+                    <a href="/toko.php?idtoko=<?php echo $row['userid']; ?>"><?php echo $row['username'] ?></a>
                   </h4>
-                  <h5>Pemilik: <?php echo r['username'] ?></h5>
-                  <p class="card-text"><?php echo r['description'] ?></p>
+                  <h5>Pemilik: <?php echo $row['username'] ?></h5>
+                  <p class="card-text"><?php echo $row['description'] ?></p>
                 </div>
                 <div class="card-footer">  
                 </div>

@@ -12,9 +12,6 @@
             <span class="sr-only">(current)</span>
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/lapak.php">Lihat Toko</a>
-        </li>
         <?php if(empty($_SESSION['logindata'])) { ?>
           <li class="nav-item">
             <a class="nav-link" href="/login.php">Login</a>
@@ -23,6 +20,17 @@
             <a class="nav-link" href="/register.php">Register</a>
           </li>
         <?php }else{ ?>
+          <li class="nav-item">
+            <a class="nav-link" href="/lapak.php">Lihat Toko</a>
+          </li>
+          <?php if($_SESSION['logindata']['tipe']=="penjual"){?>
+            <li class="nav-item">
+              <a class="nav-link" href="/myToko.php">My Toko</a>
+            </li>  
+          <?php } ?>
+          <li class="nav-item">
+            <a class="nav-link" href="/myToko.php">Setting</a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="/logout.php">Logout</a>
           </li>

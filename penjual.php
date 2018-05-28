@@ -5,6 +5,10 @@
   $data["alamat"] = "Jalan TC 2018";
   $data["kontak"] = "085702400989";
   //include "auth/logincheck.php"
+  session_start();
+  if(empty($_SESSION['logindata'])){
+    header('Location: /login.php');
+  }
 ?>
 
   <?php include 'base/header.php' ?>
