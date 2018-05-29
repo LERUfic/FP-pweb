@@ -26,27 +26,32 @@ Progress:
 - 29 Mei 2018:
     * CRUD barang dagangan: green
 
+To-Do:
+- Pembeli bisa membeli barang (ubah status barang jadi 1) lalu upload bukti
+- Penjual bisa melihat file bukti dan memproses barang (ubah status barang jadi 2)
+- Pembeli yang menerima barang bisa merubah status barang jadi 3
+- Nembuat halaman CRUD user (tipe tidak bisa diubah)
 
 Schema Database:
-users
-    ->userid
-    ->username
-    ->password
-    ->description
-    ->tipe
-    ->alamat
-    ->kontak
-    ->imgPath
+- users:
+    * userid
+    * username
+    * password
+    * description
+    * tipe
+    * alamat
+    * kontak
+    * imgPath
 
 barang
-    ->idbarang
-    ->namaBarang
-    ->deskripsiBarang
-    ->hargaBarang
-    ->idUser
-    ->imgbarang
+    * idbarang
+    * namaBarang
+    * deskripsiBarang
+    * hargaBarang
+    * idUser
+    * imgbarang
 
 transaksi
-    ->idtransaksi
-    ->idBarang
-    ->idPembeli
+    * idtransaksi
+    * idBarang
+    * idPembeli
