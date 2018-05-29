@@ -22,6 +22,10 @@
 	$stmt->bind_param("ss",$statusBarang, $idbarang);
 	$stmt->execute();
 
+	$stmt2 = $conn->prepare('UPDATE transaksi SET imgBukti = ? WHERE idbarang = ?');
+	$stmt2->bind_param("ss",$dbFile, $idbarang);
+	$stmt2->execute();
+
 	header("Location: /transaksi.php");
 
  ?>

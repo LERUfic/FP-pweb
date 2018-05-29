@@ -41,7 +41,7 @@
                         <?php  if($row['statusBarang'] == 1){ ?>
                           <td>Menunggu Upload Bukti.</td>
                         <?php }elseif($row['statusBarang'] == 2){ ?>
-                          <td><a href="model/prosesbarang.php?idbarang=<?php echo $row['idbarang']; ?>"><button class="btn btn-warning">Proses Barangnya Sekarang.</button></a></td>
+                          <td><a href="model/prosesbarang.php?idbarang=<?php echo $row['idbarang']; ?>"><button class="btn btn-warning">Proses Barangnya Sekarang.</button></a> <a href="<?php echo $row['imgBukti']; ?>" download >Download Bukti</a></td>
                         <?php }elseif($row['statusBarang'] == 3){ ?>
                           <td>Barang Telah di Proses. Menunggu Konfirmasi Pembeli.</td>
                         <?php }elseif($row['statusBarang'] == 4){ ?>
@@ -50,7 +50,7 @@
                     <?php }} ?>
                   <?php }else{ ?>
                     <tr>
-                      <td colspan="5"><center>Tidak Ada Barang Dagangan</center></td>
+                      <td colspan="4"><center>Tidak Ada Barang yang Dibeli.</center></td>
                     </tr>
                   <?php } ?>
                 </tbody>

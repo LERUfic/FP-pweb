@@ -18,7 +18,7 @@
 	//insert into transaksi for log purpose
 	
 	$stmt2 = $conn->prepare('INSERT INTO transaksi(idBarang,idPembeli,imgBukti) VALUES(?,?,?)');
-	$stmt2->bind_param("ss",$idbarang, $userid, $imgBukti);
+	$stmt2->bind_param("sss",$idbarang, $userid, $imgBukti);
 	$stmt2->execute();
 
 	header("Location: /transaksi.php");

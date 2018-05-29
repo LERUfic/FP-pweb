@@ -1,4 +1,4 @@
-    <footer class="py-5 bg-dark">
+    <footer class="py-5 bg-dark footer" style="width: 100%;">
       <div class="container">
         <p class="m-0 text-center text-white">Copyright &copy; TOKOREADYA 2018</p>
       </div>

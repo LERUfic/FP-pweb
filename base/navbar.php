@@ -35,10 +35,10 @@
             <a class="nav-link" href="/transaksi.php">Transaksi</a>
           </li>
         <?php } ?>
-          <li class="nav-item">
+ <!--          <li class="nav-item">
             <a class="nav-link" href="/setting.php">Setting</a>
           </li>
-          <li class="nav-item">
+  -->         <li class="nav-item">
             <a class="nav-link" href="/logout.php">Logout</a>
           </li>
         <?php } ?>

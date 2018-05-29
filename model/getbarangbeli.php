@@ -8,7 +8,7 @@
   $status = 0;
 	$data = array();
 
-   	$barang = $conn->prepare('SELECT * FROM transaksi INNER JOIN barang ON transaksi.idBarang = barang.idbarang where idPembeli = ? and barang.statusBarang > ?');
+   	$barang = $conn->prepare('SELECT * FROM transaksi INNER JOIN barang ON transaksi.idBarang = barang.idbarang where transaksi.idPembeli = ? and barang.statusBarang > ?');
    	$barang->bind_param('ss',$idUser,$status);
    	$barang->execute();
     $barangs = $barang->get_result();
@@ -16,5 +16,5 @@
    	while($barang = $barangs->fetch_assoc()){
     	$data[]=$barang;
    	}
-
+    //echo json_encode($data);
 ?>
