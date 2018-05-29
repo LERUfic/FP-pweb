@@ -12,7 +12,7 @@
 	$username = $_SESSION['logindata']['username'];
 	//Olah File
 	$tempFile = $_FILES['imgbarang']['tmp_name'];
-	$desFile = "/static/img/barang/";
+	$desFile = "../static/img/barang/";
 	$destination = $desFile.$username.'-'.$_FILES['imgbarang']['name'];
 	$dbFile = "/static/img/barang/";
 	$dbFile = $dbFile.$username.'-'.$_FILES['imgbarang']['name'];
