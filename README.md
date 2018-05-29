@@ -5,6 +5,12 @@ Fitur-fitur:
 - Pembeli bisa membeli barang
 - Penjual bisa menjual banyak barang (CRUD)
 
+Aturan Ngoding:
+- Segala php yang konek ke database/pemrosesan data secara backend ditaruh di folder model.
+- Seluruh asset entah javascript ,css, image dan download file user ada di folder static.
+- Jika ingin membuat partial view html (modal, footer, header, sidebar) yang bisa dipakai di multi html taruh di folder base.
+- Folder root berguna sebagai view utama.
+
 Progress:
 - 27 Mei 2018:
 	* register: backend & frontend (ok) kurang testing aja
@@ -14,5 +20,33 @@ Progress:
 	* halaman toko: frontend
 
 - 28 Mei 2018:
-	* register green
+	* register: green
 	* login: green
+
+- 29 Mei 2018:
+    * CRUD barang dagangan: green
+
+
+Schema Database:
+users
+    ->userid
+    ->username
+    ->password
+    ->description
+    ->tipe
+    ->alamat
+    ->kontak
+    ->imgPath
+
+barang
+    ->idbarang
+    ->namaBarang
+    ->deskripsiBarang
+    ->hargaBarang
+    ->idUser
+    ->imgbarang
+
+transaksi
+    ->idtransaksi
+    ->idBarang
+    ->idPembeli

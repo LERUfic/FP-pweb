@@ -25,11 +25,11 @@
           </li>
           <?php if($_SESSION['logindata']['tipe']=="penjual"){?>
             <li class="nav-item">
-              <a class="nav-link" href="/myToko.php">My Toko</a>
+              <a class="nav-link" href="/mytoko.php">My Toko</a>
             </li>  
           <?php } ?>
           <li class="nav-item">
-            <a class="nav-link" href="/myToko.php">Setting</a>
+            <a class="nav-link" href="/setting.php">Setting</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/logout.php">Logout</a>

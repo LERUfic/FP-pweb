@@ -15,20 +15,17 @@
 	$tempFile = $_FILES['lg_file']['tmp_name'];
 	$desFile = "../static/img/userlapak/";
 	$destination = $desFile.$username.'-'.$_FILES['lg_file']['name'];
+	$dbFile = "/static/img/userlapak/";
+	$dbFile = $dbFile.$username.'-'.$_FILES['imgbarang']['name'];
 
 
 	$result = move_uploaded_file($tempFile, $destination);
 
-	echo json_encode($_FILES);
-	echo json_encode($destination);
-	
    	//Proses input db
   	$stmt = $conn->prepare('INSERT INTO users (username,password,description,tipe,alamat,kontak,imgPath) VALUES(?,?,?,?,?,?,?)');
 
-	$stmt->bind_param("sssssss",$username, $password, $description, $tipe, $alamat, $kontak, $destination);
+	$stmt->bind_param("sssssss",$username, $password, $description, $tipe, $alamat, $kontak, $dbFile);
 	$stmt->execute();
-
-	$path = $_SERVER['SERVER_NAME'];
 
 	header("Location: /login.php");
 

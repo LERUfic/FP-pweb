@@ -5,7 +5,7 @@
 	}
 
 	if($_SESSION['logindata']['tipe']=='penjual'){
-   		header("Location: /penjual.php");	
+   		header("Location: /mytoko.php");	
    	}
 
    	if($_SESSION['logindata']['tipe'] =='pembeli'){
