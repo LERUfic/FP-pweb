@@ -24,6 +24,9 @@
 	$stmt->bind_param("sssss",$namabarang, $description, $hargabarang, $dbFile, $idbarang);
 
 	$stmt->execute();
+
+	unset($_SESSION['tempEdit']);
+
 	header("Location: /mytoko.php");
 
  ?>

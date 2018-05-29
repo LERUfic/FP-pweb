@@ -26,8 +26,15 @@
           <?php if($_SESSION['logindata']['tipe']=="penjual"){?>
             <li class="nav-item">
               <a class="nav-link" href="/mytoko.php">My Toko</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/transaksitoko.php">Transaksi</a>
             </li>  
-          <?php } ?>
+          <?php }else{ ?>
+          <li class="nav-item">
+            <a class="nav-link" href="/transaksi.php">Transaksi</a>
+          </li>
+        <?php } ?>
           <li class="nav-item">
             <a class="nav-link" href="/setting.php">Setting</a>
           </li>

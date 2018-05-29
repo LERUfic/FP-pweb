@@ -16,7 +16,7 @@
 	$desFile = "../static/img/userlapak/";
 	$destination = $desFile.$username.'-'.$_FILES['lg_file']['name'];
 	$dbFile = "/static/img/userlapak/";
-	$dbFile = $dbFile.$username.'-'.$_FILES['imgbarang']['name'];
+	$dbFile = $dbFile.$username.'-'.$_FILES['lg_file']['name'];
 
 
 	$result = move_uploaded_file($tempFile, $destination);

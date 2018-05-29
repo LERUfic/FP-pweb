@@ -33,7 +33,7 @@
                   <?php if($_SESSION['logindata']['tipe'] == "penjual"){ ?>
                     <a href="/editbarang.php?idbarang=<?php echo $row['idbarang']; ?>"><button class="btn btn-danger">Edit</button></a>
                   <?php }else{ ?>
-                    <a href="modal/belibarang.php?idbarang=<?php echo $row['idbarang']; ?>"><button class="btn btn-info">Beli</button></a>
+                    <a href="model/belibarang.php?idbarang=<?php echo $row['idbarang']; ?>"><button class="btn btn-info">Beli</button></a>
                   <?php } ?>
                 </div>
               </div>
