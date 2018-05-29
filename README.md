@@ -43,7 +43,7 @@ Schema Database:
     * kontak
     * imgPath
 
-barang
+- barang:
     * idbarang
     * namaBarang
     * deskripsiBarang
@@ -51,7 +51,7 @@ barang
     * idUser
     * imgbarang
 
-transaksi
+- transaksi:
     * idtransaksi
     * idBarang
     * idPembeli
