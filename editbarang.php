@@ -1,6 +1,9 @@
 <?php 
   include 'base/header.php' ;
   include 'model/get_item.php';
+  if($_SESSION['logindata']['tipe'] != 'penjual'){
+    header('Location: /index.php');
+  };
 ?>
 
     <!-- Page Content -->

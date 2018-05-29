@@ -1,4 +1,8 @@
-<?php include 'base/header.php' ?>
+<?php include 'base/header.php'; 
+  if($_SESSION['logindata']['tipe'] != 'penjual'){
+    header('Location: /index.php');
+  };
+?>
 
     <!-- Page Content -->
     <div class="container">

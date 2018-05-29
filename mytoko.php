@@ -1,5 +1,8 @@
 <?php 
   include "model/getbarang.php";
+  if($_SESSION['logindata']['tipe'] != 'penjual'){
+    header('Location: /index.php');
+  };
 ?>
   <?php include 'base/header.php' ?>
 

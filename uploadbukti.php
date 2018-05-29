@@ -1,5 +1,8 @@
 <?php
   session_start();
+  if($_SESSION['logindata']['tipe'] != 'pembeli'){
+    header('Location: /index.php');
+  };
 ?>
   <?php include 'base/header.php' ?>
     <!-- Page Content -->

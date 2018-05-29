@@ -1,5 +1,8 @@
 <?php 
   include "model/getbarangbeli.php";
+  if($_SESSION['logindata']['tipe'] != 'pembeli'){
+    header('Location: /index.php');
+  };
 ?>
   <?php include 'base/header.php' ?>
 
@@ -32,6 +35,7 @@
                     foreach($data as $row){ 
                       $no=$no+1;
                     ?>
+                    <div id="divbarang"></td>
                       <tr>
                         <td><?php echo $no ?></td>
                         <td><?php echo $row['namaBarang'] ?></td>

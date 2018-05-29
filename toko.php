@@ -1,6 +1,9 @@
 <?php 
   include "model/gettoko.php";
   include 'base/header.php';
+  if(empty($_SESSION['logindata'])){
+    header('Location: /login.php');
+  };
 ?>
     <!-- Page Content -->
     <div class="container">

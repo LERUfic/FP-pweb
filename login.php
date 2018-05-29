@@ -1,4 +1,12 @@
-<?php include 'base/header.php' ?>
+<?php include 'base/header.php';
+
+  if($_SESSION['logindata']['tipe'] == 'penjual'){
+    header('Location: /mytoko.php');
+  };
+  if($_SESSION['logindata']['tipe'] == 'pembeli'){
+    header('Location: /lapak.php');
+  };
+?>
 
     <!-- Page Content -->
     <div class="container">
